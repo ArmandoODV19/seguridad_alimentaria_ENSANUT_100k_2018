@@ -1,4 +1,4 @@
-# abrir seguridad alimentaria
+# cargando seguridad alimentaria
 
 seguridad_alimentaria <- readRDS("clean_data/seguridad_alimentaria_100k_2018.rds")
 
