@@ -9,7 +9,7 @@ security_plot <- function(x = seguridad_alimentaria){
     select(alimentaria) %>%
     group_by(alimentaria) %>%
     count() %>%
-    mutate(porcentaje = n/8996) %>%
+    mutate(porcentaje = freq/8996) %>%
     ggplot(aes(x = alimentaria, y = porcentaje, fill = alimentaria))+
     scale_x_discrete(limits=c("seguridad_alimentaria","inseguridad_leve",
                               "inseguridad_moderada", "inseguridad_severa"))+
