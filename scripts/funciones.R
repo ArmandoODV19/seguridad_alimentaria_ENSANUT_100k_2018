@@ -280,7 +280,7 @@ security_estrato_df <- function(x = seguridad_alimentaria, estrato){
     filter(area == estrato) %>%
     group_by(alimentaria, area) %>%
     count() %>%
-    plyr::summarise(total = sum(freq))
+    summarise(total = sum(freq))
 
   sta_total <- sta$total
 
