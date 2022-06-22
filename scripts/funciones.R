@@ -72,7 +72,7 @@ security_state_df <- function(x = seguridad_alimentaria, state){
     filter(entidad == state) %>%
     group_by(alimentaria, entidad) %>%
     count() %>%
-    plyr::summarise(total = sum(freq))
+    summarise(total = sum(freq))
 
   sta_total <- sta$total
 
