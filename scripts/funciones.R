@@ -176,7 +176,7 @@ security_town_df <- function(x = seguridad_alimentaria, town){
     filter(localidad == town) %>%
     group_by(alimentaria, localidad) %>%
     count() %>%
-    plyr::summarise(total = sum(freq))
+    summarise(total = sum(freq))
 
   sta_total <- sta$total
 
