@@ -198,7 +198,7 @@ security_region_plot <- function(x = seguridad_alimentaria, zone){
     filter(region == zone) %>%
     group_by(alimentaria, region) %>%
     count() %>%
-    plyr::summarise(total = sum(freq))
+    summarise(total = sum(freq))
 
   sta_total <- sta$total
 
@@ -250,7 +250,7 @@ security_estrato_plot <- function(x = seguridad_alimentaria, estrato){
     filter(area == estrato) %>%
     group_by(alimentaria, area) %>%
     count() %>%
-    plyr::summarise(total = sum(freq))
+    summarise(total = sum(freq))
 
   sta_total <- sta$total
 
