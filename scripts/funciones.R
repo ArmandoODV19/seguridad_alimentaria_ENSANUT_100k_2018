@@ -146,7 +146,7 @@ security_town_plot <- function(x = seguridad_alimentaria, town){
     filter(localidad == town) %>%
     group_by(alimentaria, localidad) %>%
     count() %>%
-    plyr::summarise(total = sum(n))
+    summarise(total = sum(freq))
 
   sta_total <- sta$total
 
@@ -155,7 +155,7 @@ security_town_plot <- function(x = seguridad_alimentaria, town){
     select(alimentaria) %>%
     group_by(alimentaria) %>%
     count() %>%
-    mutate(porcentaje = n/sta_total) %>%
+    mutate(porcentaje = freq/sta_total) %>%
     ggplot(aes(x = alimentaria, y = porcentaje, fill = alimentaria))+
     geom_col()+
     scale_x_discrete(limits=c("seguridad_alimentaria","inseguridad_leve",
